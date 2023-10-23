@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculacpf(cpf){
+            cpf = cpf.split('')
+
+            console.log(cpf)
+            digito1 = 0
+            for (let i = 0; i < 9; i++) {
+                const element = cpf[i];
+                digito1=digito1+ (12-(i+2))*element
+            }
+
+            digito1 = digito1%11
+            digito1 = 11-digito1
+            if(digito1>9){
+                window.alert("o digito é: "+0)
+                digito1=0
+            }
+            cpf[9]=digito1
+            digito2 = 0
+            console.log(cpf)
+            for (let i = 0; i < 10; i++) {
+                const element = cpf[i];
+                digito2=digito2+ (13-(i+2))*element
+            }
+
+            digito2 = digito2%11
+            digito2 = 11-digito2
+            if(digito2>9){
+                digito2=0
+            }
+            window.alert("o digito é: "+ digito1 +" "+ digito2)
+
+            
+        }
+        calculacpf(window.prompt("digite os sei digitos do cpf:"))
+        //20687284783
+    </script>
+</body>
+</html>
